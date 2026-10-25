@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babar Azam #56 | King of Cricket Tribute</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            glow: '#00ff88',
+                            dark: '#013220',
+                            accent: '#00cc66'
+                        },
+                        gold: {
+                            accent: '#ffd700',
+                            dark: '#b8860b'
+                        },
+                        darkBg: '#050c12'
+                    },
+                    fontFamily: {
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #050c12;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Dark Stadium Lights Overlay Pattern */
+        .bg-stadium-fixed {
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(0, 255, 136, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 10% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, rgba(0, 204, 102, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, #050c12 0%, #03080d 100%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Styling */
+        .glass-card {
+            background: rgba(10, 22, 34, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 136, 0.18);
+        }
+
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 136, 0.5);
+            box-shadow: 0 16px 35px -8px rgba(0, 255, 136, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050c12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00cc66;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff88;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); }
+            100% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.6); }
+        }
+    </style>
+</head>
+<body class="bg-stadium-fixed antialiased">
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-emerald-500/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-500 via-teal-400 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-emerald-500/30 overflow-hidden">
+                        <svg class="w-full h-full text-slate-950 bg-emerald-900 rounded-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="#013220"/>
+                            <text x="50%" y="62%" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani" font-weight="900" font-size="42" fill="#FFD700">56</text>
+                        </svg>
+                    </div>
+                    <span class="font-rajdhani text-2xl font-black tracking-wider text-white">
+                        KING <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400">BABAR</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wide">
+                    <a href="#hero" class="hover:text-emerald-400 transition-colors">Home</a>
+                    <a href="#journey" class="hover:text-emerald-400 transition-colors">Cricket Safar</a>
+                    <a href="#stats" class="hover:text-emerald-400 transition-colors">Stats & Records</a>
+                    <a href="#trophies" class="hover:text-emerald-400 transition-colors">Trophies</a>
+                    <a href="#gallery" class="hover:text-emerald-400 transition-colors">Photo Gallery</a>
+                    <a href="#fanzone" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-slate-950 font-black font-rajdhani hover:shadow-lg hover:shadow-emerald-500/40 transition-all">
+                        FAN ZONE
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none text-2xl p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950/98 backdrop-blur-xl border-b border-emerald-500/20 px-4 pt-3 pb-6 space-y-3">
+            <a href="#hero" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-link">Home</a>
+            <a href="#journey" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-link">Cricket Safar</a>
+            <a href="#stats" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-link">Stats & Records</a>
+            <a href="#trophies" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-link">Trophies</a>
+            <a href="#gallery" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-link">Photo Gallery</a>
+            <a href="#fanzone" class="block py-2 text-emerald-400 font-bold mobile-link">Fan Zone & Quiz</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Title & Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 font-bold text-xs uppercase tracking-widest">
+                        <i class="fas fa-crown text-amber-400"></i>
+                        <span>Pride of Pakistan Cricket #56</span>
+                    </div>
+
+                    <h1 class="font-rajdhani text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-none">
+                        BABAR <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400">AZAM</span>
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl text-amber-300 font-bold italic font-rajdhani tracking-wide">
+                        "Cover drive signature hai, aur class permanent hai!"
+                    </p>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Mohammad Babar Azam (born 15 October 1994) is Pakistan's premiere world-class batter and former captain. Celebrated around the world for his immaculate timing, signature cover drives, and match-winning international records across Test, ODI, and T20 formats.
+                    </p>
+
+                    <!-- Key Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4">
+                        <div class="px-5 py-3 rounded-xl glass-card flex items-center space-x-3 border-l-4 border-l-emerald-400">
+                            <i class="fas fa-trophy text-amber-400 text-2xl"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-slate-400 font-semibold uppercase">ICC Player</p>
+                                <p class="font-black text-white font-rajdhani text-lg">ODI Cricketer of the Year</p>
+                            </div>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-xl glass-card flex items-center space-x-3 border-l-4 border-l-amber-400">
+                            <i class="fas fa-medal text-amber-400 text-2xl"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-slate-400 font-semibold uppercase">National Award</p>
+                                <p class="font-black text-white font-rajdhani text-lg">Sitara-e-Imtiaz</p>
+                            </div>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-xl glass-card flex items-center space-x-3 border-l-4 border-l-cyan-400">
+                            <i class="fas fa-bolt text-cyan-400 text-2xl"></i>
+                            <div class="text-left">
+                                <p class="text-xs text-slate-400 font-semibold uppercase">Fastest Milestone</p>
+                                <p class="font-black text-white font-rajdhani text-lg">Fastest 5,000 ODI Runs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#stats" class="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-black font-rajdhani text-xl tracking-wider uppercase transition-all shadow-xl shadow-emerald-500/30 flex items-center justify-center space-x-3">
+                            <span>EXPLORE STATS</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#gallery" class="px-8 py-4 rounded-xl glass-card hover:bg-slate-800 text-white font-black font-rajdhani text-xl tracking-wider uppercase transition-all border border-slate-700 flex items-center justify-center space-x-3">
+                            <i class="fas fa-image text-emerald-400"></i>
+                            <span>PHOTO GALLERY</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glowing Background Aura -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-emerald-500 via-amber-400 to-teal-400 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
+                        
+                        <div class="relative glass-card rounded-3xl p-6 border border-emerald-500/40 text-center space-y-6 overflow-hidden pulse-glow">
+                            
+                            <!-- Custom Vector Avatar Card -->
+                            <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-2xl overflow-hidden border-4 border-emerald-400 shadow-2xl bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center p-4">
+                                <svg class="w-full h-full text-emerald-400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Stadium Lights Effect -->
+                                    <circle cx="100" cy="100" r="90" fill="url(#hero-grad)" opacity="0.3"/>
+                                    <!-- Cricket Cap & Silhouette -->
+                                    <path d="M60 140 C60 110, 80 90, 100 90 C120 90, 140 110, 140 140 Z" fill="#013220"/>
+                                    <circle cx="100" cy="70" r="28" fill="#1e293b"/>
+                                    <!-- Helmet Visor / Cap -->
+                                    <path d="M70 65 Q100 45 130 65 L135 68 Q100 55 65 68 Z" fill="#00ff88"/>
+                                    <!-- Bat Silhouette -->
+                                    <rect x="135" y="60" width="12" height="90" rx="3" transform="rotate(-25 135 60)" fill="#FFD700"/>
+                                    <rect x="139" y="45" width="4" height="20" rx="2" transform="rotate(-25 135 60)" fill="#cbd5e1"/>
+                                    <!-- Number 56 -->
+                                    <text x="100" y="150" font-family="Rajdhani" font-weight="900" font-size="32" fill="#00ff88" text-anchor="middle">#56</text>
+                                    <defs>
+                                        <radialGradient id="hero-grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(90)">
+                                            <stop stop-color="#00FF88"/>
+                                            <stop offset="1" stop-color="#050C12" stop-opacity="0"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                
+                                <div class="absolute bottom-3 left-0 right-0 text-center">
+                                    <span class="px-3 py-1 bg-emerald-500 text-slate-950 font-black font-rajdhani text-xs tracking-wider uppercase rounded-full">
+                                        KING BABAR #56
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-rajdhani text-3xl font-black text-white tracking-wide">MOHAMMAD BABAR AZAM</h3>
+                                <p class="text-emerald-400 font-bold text-sm mt-1"><i class="fas fa-map-marker-alt mr-1"></i> Lahore, Punjab, Pakistan</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2 py-4 border-y border-slate-700/60">
+                                <div>
+                                    <p class="text-xs text-slate-400 font-semibold uppercase">Intl Runs</p>
+                                    <p class="text-2xl font-black text-emerald-400 font-rajdhani">13,800+</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-semibold uppercase">Centuries</p>
+                                    <p class="text-2xl font-black text-amber-400 font-rajdhani">31</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-semibold uppercase">ODI Avg</p>
+                                    <p class="text-2xl font-black text-cyan-400 font-rajdhani">56.7</p>
+                                </div>
+                            </div>
+
+                            <div class="text-xs text-slate-300 flex justify-between items-center px-2 font-medium">
+                                <span><i class="fas fa-baseball-bat-ball text-emerald-400 mr-1.5"></i> Right-Handed Batter</span>
+                                <span><i class="fas fa-shield-halved text-amber-400 mr-1.5"></i> Top Order Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREER JOURNEY SECTION (Cricket Safar) -->
+    <section id="journey" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs sm:text-sm">Cricket Ka Safar</p>
+                <h2 class="font-rajdhani text-4xl sm:text-5xl font-black text-white tracking-wide">THE RISE OF A LEGEND</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm sm:text-base">Gaddafi Stadium ke ball boy se dunya ke top-ranked batsman banne tak ka tareechi safar.</p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-emerald-500/40 ml-4 md:ml-32 space-y-12">
+                
+                <!-- 2007 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-slate-950 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 text-xs font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
+                        07
+                    </div>
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8">
+                        <span class="text-xs font-black uppercase tracking-wider px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-md border border-emerald-500/40">2007 - Ball Boy Era</span>
+                        <h3 class="font-rajdhani text-2xl sm:text-3xl font-bold text-white mt-3">Gaddafi Stadium Ball Boy</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                            Babar Azam started his passion at Gaddafi Stadium Lahore as a ball boy during South Africa's 2007 tour of Pakistan. Fetching balls outside the boundary sparked his lifelong dream to bat for his country.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2012 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-slate-950 border-2 border-amber-400 flex items-center justify-center text-amber-400 text-xs font-bold group-hover:bg-amber-400 group-hover:text-slate-950 transition-colors">
+                        12
+                    </div>
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8">
+                        <span class="text-xs font-black uppercase tracking-wider px-3 py-1 bg-amber-500/20 text-amber-300 rounded-md border border-amber-500/40">2012 - Under-19 Captain</span>
+                        <h3 class="font-rajdhani text-2xl sm:text-3xl font-bold text-white mt-3">Leading National Youth Team</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                            Captained Pakistan in the 2012 ICC Under-19 Cricket World Cup in Australia. Finished as Pakistan's top run-scorer with 287 runs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2015 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 text-xs font-bold group-hover:bg-cyan-400 group-hover:text-slate-950 transition-colors">
+                        15
+                    </div>
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8">
+                        <span class="text-xs font-black uppercase tracking-wider px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-md border border-cyan-500/40">May 31, 2015 - International Debut</span>
+                        <h3 class="font-rajdhani text-2xl sm:text-3xl font-bold text-white mt-3">ODI Debut vs Zimbabwe</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                            Made his ODI debut in Lahore against Zimbabwe, scoring a fluent 54 runs off 60 balls and instantly proving his international credentials.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-slate-950 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 text-xs font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
+                        16
+                    </div>
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8">
+                        <span class="text-xs font-black uppercase tracking-wider px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-md border border-emerald-500/40">2016 - 3 Consecutive ODI Centuries</span>
+                        <h3 class="font-rajdhani text-2xl sm:text-3xl font-bold text-white mt-3">World Record vs West Indies</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                            Scored 3 back-to-back ODI centuries (120, 123, 117) against West Indies in UAE, becoming only the 3rd Pakistani batter to achieve this feat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2019-2023 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-slate-950 border-2 border-amber-400 flex items-center justify-center text-amber-400 text-xs font-bold group-hover:bg-amber-400 group-hover:text-slate-950 transition-colors">
+                        19
+                    </div>
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8">
+                        <span class="text-xs font-black uppercase tracking-wider px-3 py-1 bg-amber-500/20 text-amber-300 rounded-md border border-amber-500/40">2019 - Captaincy & World Supremacy</span>
+                        <h3 class="font-rajdhani text-2xl sm:text-3xl font-bold text-white mt-3">All-Format Captain & ICC Player of the Year</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mt-2">
+                            Appointed captain in all formats, leading Pakistan to the T20 World Cup 2022 Final. Awarded Sir Garfield Sobers Trophy & Sitara-e-Imtiaz for unmatched international performance.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREER STATS INTERACTIVE SECTION -->
+    <section id="stats" class="py-20 bg-slate-950/70 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs sm:text-sm">Numbers & Records</p>
+                <h2 class="font-rajdhani text-4xl sm:text-5xl font-black text-white">INTERNATIONAL STATS</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm">Select format to inspect Babar Azam's official international records.</p>
+            </div>
+
+            <!-- Format Selector Tabs -->
+            <div class="flex justify-center space-x-2 sm:space-x-4 mb-10">
+                <button onclick="switchTab('odi')" id="tab-odi" class="px-6 py-3 rounded-xl font-rajdhani font-black text-lg tracking-wider transition-all bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30">
+                    ODI STATS
+                </button>
+                <button onclick="switchTab('test')" id="tab-test" class="px-6 py-3 rounded-xl font-rajdhani font-black text-lg tracking-wider transition-all bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700">
+                    TEST STATS
+                </button>
+                <button onclick="switchTab('t20i')" id="tab-t20i" class="px-6 py-3 rounded-xl font-rajdhani font-black text-lg tracking-wider transition-all bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700">
+                    T20I STATS
+                </button>
+            </div>
+
+            <!-- Stats Dynamic Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="stats-grid">
+                <!-- JavaScript renders active tab stats -->
+            </div>
+
+            <!-- Key Records Box -->
+            <div class="mt-12 glass-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-amber-400">
+                <h3 class="font-rajdhani text-2xl font-black text-white mb-4 flex items-center">
+                    <i class="fas fa-crown text-amber-400 mr-3"></i> Historic Milestones
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+                        <p class="text-emerald-400 font-bold text-base mb-1">Fastest to 5,000 ODI Runs</p>
+                        <p class="text-slate-300">Achieved 5,000 ODI runs in just 97 innings, beating Hashim Amla (101) and Viv Richards (114).</p>
+                    </div>
+                    <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+                        <p class="text-amber-400 font-bold text-base mb-1">900+ Days as No. 1 ODI Batter</p>
+                        <p class="text-slate-300">Held the #1 spot in ICC Men's ODI Batting Rankings continuously for over 900 days.</p>
+                    </div>
+                    <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+                        <p class="text-cyan-400 font-bold text-base mb-1">Most Wins as T20 Captain</p>
+                        <p class="text-slate-300">Captained Pakistan to over 44 T20I victories, establishing a record in Pakistan cricket history.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TROPHIES & HONORS SECTION -->
+    <section id="trophies" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs sm:text-sm">Awards & Titles</p>
+                <h2 class="font-rajdhani text-4xl sm:text-5xl font-black text-white">MAJOR TROPHIES & HONORS</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-card glass-card-hover rounded-2xl p-6 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-amber-400 text-3xl">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="font-rajdhani text-2xl font-bold text-white">ICC ODI Player of the Year</h3>
+                    <p class="text-emerald-400 font-bold text-sm">2021 & 2022 Winner</p>
+                    <p class="text-slate-400 text-xs leading-relaxed">Won back-to-back ICC ODI Cricketer of the Year awards for dominant world performance.</p>
+                </div>
+
+                <div class="glass-card glass-card-hover rounded-2xl p-6 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/20 border border-emerald-400/50 flex items-center justify-center text-emerald-400 text-3xl">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="font-rajdhani text-2xl font-bold text-white">Sir Garfield Sobers Trophy</h3>
+                    <p class="text-amber-400 font-bold text-sm">2022 Overall Winner</p>
+                    <p class="text-slate-400 text-xs leading-relaxed">ICC Men's Cricketer of the Year award for supreme all-format performance.</p>
+                </div>
+
+                <div class="glass-card glass-card-hover rounded-2xl p-6 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-cyan-400 text-3xl">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="font-rajdhani text-2xl font-bold text-white">PSL Champion (2020)</h3>
+                    <p class="text-cyan-400 font-bold text-sm">Karachi Kings & Peshawar Zalmi</p>
+                    <p class="text-slate-400 text-xs leading-relaxed">PSL champion and Player of the Tournament award winner.</p>
+                </div>
+
+                <div class="glass-card glass-card-hover rounded-2xl p-6 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-purple-500/20 border border-purple-400/50 flex items-center justify-center text-purple-400 text-3xl">
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                    <h3 class="font-rajdhani text-2xl font-bold text-white">Sitara-e-Imtiaz</h3>
+                    <p class="text-purple-300 font-bold text-sm">Civilian Honor</p>
+                    <p class="text-slate-400 text-xs leading-relaxed">The youngest cricketer ever to receive Pakistan's 3rd highest civilian honor.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section id="gallery" class="py-20 bg-slate-950/70 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs sm:text-sm">Visual Moments</p>
+                <h2 class="font-rajdhani text-4xl sm:text-5xl font-black text-white">KING'S GALLERY & MOMENTS</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 to-amber-400 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm">Click any moment card to view full detail preview.</p>
+            </div>
+
+            <!-- Visual Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-emerald-400 transition-all"
+                     onclick="openGalleryModal('Cover Drive Masterclass', 'The signature stroke that cricket commentators and fans around the globe admire. Babar\'s cover drive technique is recognized as the purest in modern cricket.', 'drive')">
+                    <div class="relative h-60 bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-emerald-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#013220" rx="10"/>
+                            <circle cx="100" cy="75" r="50" fill="#00ff88" opacity="0.15"/>
+                            <path d="M40 120 L160 120" stroke="#00ff88" stroke-width="3" stroke-dasharray="4 4"/>
+                            <rect x="110" y="30" width="12" height="85" rx="3" transform="rotate(35 110 30)" fill="#FFD700"/>
+                            <circle cx="70" cy="80" r="14" fill="#00ff88"/>
+                            <text x="100" y="140" font-family="Rajdhani" font-weight="800" font-size="14" fill="#FFD700" text-anchor="middle">COVER DRIVE KING</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-emerald-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            SIGNATURE SHOT
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">Cover Drive Masterclass</h4>
+                            <p class="text-slate-400 text-xs mt-1">Perfect head position, high elbow, and crisp bat swing.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-emerald-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-amber-400 transition-all"
+                     onclick="openGalleryModal('Captaincy Leadership', 'Leading Pakistan to World Cup finals and historic test victories in Australia, Sri Lanka, and West Indies.', 'captain')">
+                    <div class="relative h-60 bg-gradient-to-b from-amber-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-amber-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#1e1b4b" rx="10"/>
+                            <path d="M100 25 L120 50 L150 50 L125 70 L135 100 L100 80 L65 100 L75 70 L50 50 L80 50 Z" fill="#FFD700" opacity="0.8"/>
+                            <text x="100" y="130" font-family="Rajdhani" font-weight="900" font-size="16" fill="#00ff88" text-anchor="middle">PAKISTAN CAPTAIN #56</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-amber-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            LEADERSHIP
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">Captaincy Era</h4>
+                            <p class="text-slate-400 text-xs mt-1">Leading the national team with dignity and high standards.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-amber-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-cyan-400 transition-all"
+                     onclick="openGalleryModal('196 vs Australia - Test Masterclass', 'Karachi Test 2022: Babar Azam batted for over 10 hours in the 4th innings, scoring 196 runs to pull off a miraculous match save.', 'test196')">
+                    <div class="relative h-60 bg-gradient-to-b from-slate-900 via-cyan-950 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-cyan-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#082f49" rx="10"/>
+                            <text x="100" y="70" font-family="Rajdhani" font-weight="900" font-size="54" fill="#00ff88" text-anchor="middle">196</text>
+                            <text x="100" y="105" font-family="Rajdhani" font-weight="700" font-size="14" fill="#FFD700" text-anchor="middle">VS AUSTRALIA (KARACHI)</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-cyan-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            TEST RECORD
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">196 vs Australia</h4>
+                            <p class="text-slate-400 text-xs mt-1">Epic 425-ball marathon rescue inning in Test cricket history.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-cyan-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-purple-400 transition-all"
+                     onclick="openGalleryModal('Green Jersey Pride', 'Representing 240+ Million Pakistanis with honor and humility across all global stadiums.', 'jersey')">
+                    <div class="relative h-60 bg-gradient-to-b from-purple-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-purple-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#0f172a" rx="10"/>
+                            <path d="M70 40 L130 40 L145 70 L130 120 L70 120 L55 70 Z" fill="#013220" stroke="#00ff88" stroke-width="2"/>
+                            <text x="100" y="90" font-family="Rajdhani" font-weight="900" font-size="36" fill="#FFD700" text-anchor="middle">56</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-purple-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            NATIONAL PRIDE
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">Green Shirt Legend</h4>
+                            <p class="text-slate-400 text-xs mt-1">Carrying the green shirt with dignity and dedication.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-purple-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-emerald-400 transition-all"
+                     onclick="openGalleryModal('Sitara-e-Imtiaz Moment', 'Conferred with Pakistan\'s 3rd highest civilian honor at the Presidency for extraordinary sports contributions.', 'award')">
+                    <div class="relative h-60 bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-emerald-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#022c22" rx="10"/>
+                            <circle cx="100" cy="65" r="30" fill="#FFD700" opacity="0.3"/>
+                            <path d="M100 35 L108 55 L130 55 L112 68 L118 90 L100 77 L82 90 L88 68 L70 55 L92 55 Z" fill="#FFD700"/>
+                            <text x="100" y="125" font-family="Rajdhani" font-weight="800" font-size="14" fill="#00ff88" text-anchor="middle">SITARA-E-IMTIAZ</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-emerald-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            CIVILIAN HONOR
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">Sitara-e-Imtiaz</h4>
+                            <p class="text-slate-400 text-xs mt-1">Youngest Pakistani recipient of national civilian honor.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-emerald-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card rounded-2xl overflow-hidden cursor-pointer border border-slate-800 flex flex-col group hover:border-amber-400 transition-all"
+                     onclick="openGalleryModal('Fastest 5000 ODI Runs', 'Broke World Records by reaching 5,000 ODI runs faster than all previous legends in ODI history.', 'record5k')">
+                    <div class="relative h-60 bg-gradient-to-b from-amber-950 via-slate-900 to-slate-950 flex items-center justify-center p-6">
+                        <svg class="w-full h-full text-amber-400 transform group-hover:scale-105 transition-transform duration-500" viewBox="0 0 200 150" fill="none">
+                            <rect width="200" height="150" fill="#1c1917" rx="10"/>
+                            <text x="100" y="70" font-family="Rajdhani" font-weight="900" font-size="44" fill="#FFD700" text-anchor="middle">5000</text>
+                            <text x="100" y="100" font-family="Rajdhani" font-weight="700" font-size="14" fill="#00ff88" text-anchor="middle">FASTEST IN 97 INNINGS</text>
+                        </svg>
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-amber-500 text-slate-950 text-xs font-black font-rajdhani rounded-md">
+                            WORLD RECORD
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-rajdhani text-xl font-bold text-white">5,000 ODI Runs Record</h4>
+                            <p class="text-slate-400 text-xs mt-1">Smashed world speed record in just 97 innings.</p>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between text-xs text-amber-400 font-bold">
+                            <span><i class="fas fa-eye mr-1"></i> View Detail</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAN ZONE & INTERACTIVE QUIZ -->
+    <!-- ================= BABAR AZAM FAN QUIZ SECTION ================= -->
+<section id="babar-quiz" class="py-12 px-4 max-w-4xl mx-auto">
+  <div class="bg-[#013220]/90 border border-[#FFD700]/30 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md relative overflow-hidden">
+    
+    <!-- Section Title -->
+    <div class="text-center mb-6">
+      <span class="bg-[#FFD700]/10 text-[#FFD700] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-[#FFD700]/30">
+        Interactive Fan Zone
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+        Are You a True <span class="text-[#FFD700]">Babarian</span>? 👑
+      </h2>
+      <p class="text-gray-300 text-sm mt-1">
+        Take the 3-question quiz & claim your official Babar Azam Fan Badge!
+      </p>
+    </div>
+
+    <!-- Quiz Box Container -->
+    <div id="quiz-box" class="space-y-6">
+      <!-- Progress Bar -->
+      <div class="w-full bg-black/40 h-2 rounded-full overflow-hidden border border-white/5">
+        <div id="quiz-progress" class="bg-gradient-to-r from-[#FFD700] to-[#E6C200] h-full w-1/3 transition-all duration-300"></div>
+      </div>
+
+      <!-- Question Text -->
+      <div id="question-container">
+        <h3 id="question-text" class="text-lg font-semibold text-white mb-4">
+          Loading Question...
+        </h3>
+        
+        <!-- Options Grid -->
+        <div id="options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <!-- Options will be generated dynamically by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Badge Card (Initially Hidden) -->
+    <div id="badge-result" class="hidden text-center py-6 space-y-6">
+      <div id="badge-card" class="bg-gradient-to-b from-[#01422b] to-[#002416] border-2 border-[#FFD700] rounded-2xl p-6 max-w-md mx-auto shadow-[0_0_30px_rgba(255,215,0,0.2)] relative">
+        <!-- Badge Header Icon -->
+        <div class="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg text-black font-extrabold text-2xl">
+          👑
+        </div>
+        <h3 class="text-xl font-bold text-[#FFD700]" id="badge-title">OFFICIAL BABARIAN</h3>
+        <p class="text-xs text-gray-300 uppercase tracking-wider mt-1" id="badge-subtitle">Certified Super Fan</p>
+        
+        <div class="my-4 py-3 border-y border-[#FFD700]/20 bg-black/30 rounded-lg">
+          <p class="text-gray-400 text-xs">Score Achieved</p>
+          <p class="text-3xl font-extrabold text-white" id="badge-score">3 / 3</p>
+        </div>
+
+        <p class="text-xs text-gray-400 italic">"Cover drive is temporary, BabarAzam Tribute Site is permanent!"</p>
+
+        <!-- Watermark / Credit -->
+        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-gray-400">
+          <span>Babar Azam Tribute App</span>
+          <span class="text-[#FFD700] font-semibold">Code by Fan 💻</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <button onclick="shareBadge()" class="w-full sm:w-auto px-6 py-3 bg-[#FFD700] text-black font-bold rounded-xl hover:bg-[#e6c200] transition-all shadow-lg flex items-center justify-center gap-2">
+          <span>📸 Share / Screenshot Badge</span>
+        </button>
+        <button onclick="resetQuiz()" class="w-full sm:w-auto px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20">
+          🔄 Retake Quiz
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+                    
+                <!-- Fan Message Board -->
+                <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+                    <div class="space-y-1">
+                        <h3 class="font-rajdhani text-3xl font-black text-white flex items-center">
+                            <i class="fas fa-heart text-red-500 mr-2"></i> Fan Support Board
+                        </h3>
+                        <p class="text-slate-400 text-xs">Send your love & wish King Babar good luck for upcoming matches!</p>
+                    </div>
+
+                    <form id="fan-form" onsubmit="handleFanMessage(event)" class="space-y-4">
+                        <div>
+                            <input type="text" id="fan-name" required placeholder="Aapka Naam (Your Name)" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 text-sm">
+                        </div>
+                        <div>
+                            <textarea id="fan-msg" required rows="3" placeholder="King Babar ke liye paigham (Message for King)..." class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-slate-950 font-black font-rajdhani text-lg tracking-wider uppercase hover:shadow-lg hover:shadow-emerald-500/30 transition-all">
+                            SEND MESSAGE <i class="fas fa-paper-plane ml-1"></i>
+                        </button>
+                    </form>
+
+                    <!-- Feed Container -->
+                    <div class="space-y-3 max-h-56 overflow-y-auto pr-1" id="message-feed">
+                        <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="font-bold text-emerald-400">Hamza Khan</span>
+                                <span class="text-slate-500">Just now</span>
+                            </div>
+                            <p class="text-slate-300 text-xs mt-1">King is back! Always proud of you Babar Azam!</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                            <div class="flex justify-between text-xs">
+                                <span class="font-bold text-emerald-400">Ayesha Malik</span>
+                                <span class="text-slate-500">2h ago</span>
+                            </div>
+                            <p class="text-slate-300 text-xs mt-1">That cover drive is pure art! Always supporting you bhai!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950/95 py-8 text-center text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p class="font-rajdhani text-xl font-bold text-slate-300 tracking-wider">
+                MADE WITH <i class="fas fa-heart text-emerald-400 mx-1"></i> FOR <span class="text-emerald-400">KING BABAR AZAM #56</span>
+            </p>
+            <p>© 2026 Tribute Portfolio. Curated with authentic records, statistics, and interactive cricket showcase.</p>
+        </div>
+    </footer>
+
+    <!-- DETAIL MODAL -->
+    <div id="detail-modal" class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-xl w-full glass-card p-6 rounded-3xl space-y-4 text-center border border-emerald-500/40" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-emerald-400 text-xl z-10 p-2 bg-slate-900/80 rounded-full w-8 h-8 flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-emerald-400 text-4xl">
+                <i class="fas fa-crown"></i>
+            </div>
+
+            <h3 id="modal-title" class="font-rajdhani text-3xl font-black text-white"></h3>
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+
+            <button onclick="closeModal()" class="px-6 py-2.5 bg-emerald-500 text-slate-950 font-black font-rajdhani rounded-xl uppercase tracking-wider">
+                CLOSE
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Stats Data Object
+        const statsData = {
+            odi: [
+                { label: 'Matches Played', value: '117+', icon: 'fa-baseball', color: 'text-emerald-400' },
+                { label: 'Total Runs', value: '5,729+', icon: 'fa-fire', color: 'text-amber-400' },
+                { label: 'Batting Avg', value: '56.7', icon: 'fa-chart-line', color: 'text-cyan-400' },
+                { label: 'Centuries (100s)', value: '19', icon: 'fa-trophy', color: 'text-purple-400' }
+            ],
+            test: [
+                { label: 'Matches Played', value: '52+', icon: 'fa-baseball', color: 'text-emerald-400' },
+                { label: 'Total Runs', value: '3,898+', icon: 'fa-fire', color: 'text-amber-400' },
+                { label: 'Highest Score', value: '196 vs AUS', icon: 'fa-star', color: 'text-cyan-400' },
+                { label: 'Centuries (100s)', value: '9', icon: 'fa-trophy', color: 'text-purple-400' }
+            ],
+            t20i: [
+                { label: 'Matches Played', value: '123+', icon: 'fa-baseball', color: 'text-emerald-400' },
+                { label: 'Total Runs', value: '4,145+', icon: 'fa-fire', color: 'text-amber-400' },
+                { label: 'Strike Rate', value: '129.5', icon: 'fa-bolt', color: 'text-cyan-400' },
+                { label: 'Centuries (100s)', value: '3', icon: 'fa-trophy', color: 'text-purple-400' }
+            ]
+        };
+
+        function switchTab(format) {
+            const grid = document.getElementById('stats-grid');
+            const tabs = ['odi', 'test', 't20i'];
+
+            tabs.forEach(tab => {
+                const btn = document.getElementById(`tab-${tab}`);
+                if (tab === format) {
+                    btn.className = "px-6 py-3 rounded-xl font-rajdhani font-black text-lg tracking-wider transition-all bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30";
+                } else {
+                    btn.className = "px-6 py-3 rounded-xl font-rajdhani font-black text-lg tracking-wider transition-all bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700";
+                }
+            });
+
+            grid.innerHTML = statsData[format].map(stat => `
+                <div class="glass-card glass-card-hover p-6 rounded-2xl text-center space-y-2 border border-slate-800">
+                    <i class="fas ${stat.icon} ${stat.color} text-3xl mb-2"></i>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">${stat.label}</p>
+                    <p class="text-3xl font-black text-white font-rajdhani">${stat.value}</p>
+                </div>
+            `).join('');
+        }
+
+        // Fan Quiz Data
+        const quizData = [
+            {
+                q: "In which year did Babar Azam make his ODI debut for Pakistan?",
+                options: ["2013", "2015", "2017", "2018"],
+                correct: 1
+            },
+            {
+                q: "What is Babar Azam's famous jersey number?",
+                options: ["#10", "#56", "#07", "#18"],
+                correct: 1
+            },
+            {
+                q: "Against which team did Babar Azam score his legendary 196 in Test cricket?",
+                options: ["India", "England", "Australia", "South Africa"],
+                correct: 2
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+
+        function loadQuizQuestion() {
+            const current = quizData[currentQuizIndex];
+            document.getElementById('quiz-progress').innerText = `Question ${currentQuizIndex + 1} of ${quizData.length}`;
+            document.getElementById('quiz-question').innerText = current.q;
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = current.options.map((opt, idx) => `
+                <button onclick="submitAnswer(${idx})" class="w-full text-left p-4 rounded-xl bg-slate-800/90 hover:bg-emerald-500/20 hover:border-emerald-400/60 border border-slate-700 text-slate-200 text-sm font-bold transition-all">
+                    ${opt}
+                </button>
+            `).join('');
+        }
+
+        function submitAnswer(selectedIdx) {
+            if (selectedIdx === quizData[currentQuizIndex].correct) {
+                quizScore++;
+            }
+
+            currentQuizIndex++;
+            if (currentQuizIndex < quizData.length) {
+                loadQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-card').classList.add('hidden');
+            const resultBox = document.getElementById('quiz-result');
+            resultBox.classList.remove('hidden');
+
+            document.getElementById('quiz-score-text').innerText = `Score: ${quizScore}/${quizData.length}`;
+            if (quizScore === quizData.length) {
+                document.getElementById('quiz-message').innerText = "Superb! Aap Babar Azam ke sachay fan hain!";
+            } else if (quizScore >= 1) {
+                document.getElementById('quiz-message').innerText = "Kafi acchi koshish! Keep following King Babar!";
+            } else {
+                document.getElementById('quiz-message').innerText = "Thoda aur Babar ke bare mein seekhnay ki zaroorat hai!";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-card').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        // Fan Message Post
+        function handleFanMessage(e) {
+            e.preventDefault();
+            const name = document.getElementById('fan-name').value.trim();
+            const msg = document.getElementById('fan-msg').value.trim();
+
+            if (name && msg) {
+                const feed = document.getElementById('message-feed');
+                const newMsg = document.createElement('div');
+                newMsg.className = "p-3.5 rounded-xl bg-slate-900/80 border border-emerald-500/40 animate-pulse";
+                newMsg.innerHTML = `
+                    <div class="flex justify-between text-xs">
+                        <span class="font-bold text-emerald-400">${escapeHtml(name)}</span>
+                        <span class="text-slate-500">Just now</span>
+                    </div>
+                    <p class="text-slate-300 text-xs mt-1">${escapeHtml(msg)}</p>
+                `;
+                feed.prepend(newMsg);
+
+                document.getElementById('fan-form').reset();
+            }
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Modal Handler
+        function openGalleryModal(title, desc, type) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('detail-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detail-modal').classList.add('hidden');
+        }
+
+        // Mobile Nav Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Initialize App
+        window.onload = function () {
+            switchTab('odi');
+            loadQuizQuestion();
+        }
+      
+  
+  // Complete Question Bank (Aap yahan aur bhi questions add kar sakte hain)
+  const questionPool = [
+    {
+      question: "Which iconic shot is Babar Azam world-famous for?",
+      options: ["Pull Shot", "Cover Drive", "Helicopter Shot", "Upper Cut"],
+      correct: 1
+    },
+    {
+      question: "What is Babar Azam's famous Jersey Number?",
+      options: ["18", "07", "56", "10"],
+      correct: 2
+    },
+    {
+      question: "In which year did Babar Azam make his International ODI debut?",
+      options: ["2013", "2015", "2017", "2019"],
+      correct: 1
+    },
+    {
+      question: "Against which team did Babar Azam score his first ODI century?",
+      options: ["Australia", "Zimbabwe", "India", "Sri Lanka"],
+      correct: 1
+    },
+    {
+      question: "What is Babar Azam's primary role in the team?",
+      options: ["Fast Bowler", "Wicket-Keeper", "Opening / Top-order Batsman", "All-rounder"],
+      correct: 2
+    },
+    {
+      question: "Which prestigious ICC award has Babar Azam won multiple times?",
+      options: ["ICC Spirit of Cricket", "ICC Men's Cricketer of the Year (Sir Garfield Sobers Trophy)", "ICC Umpire of the Year", "ICC Emerging Cricketer"],
+      correct: 1
+    }
+  ];
+
+  let currentQuestions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  // Function to shuffle and pick random 3 questions every time
+  function startNewQuiz() {
+    // Array copy karke shuffle karna taake original pool kharab na ho
+    let shuffled = [...questionPool].sort(() => 0.5 - Math.random());
+    // Sirf pehle 3 random questions uthana
+    currentQuestions = shuffled.slice(0, 3);
+    currentQuestionIndex = 0;
+    score = 0;
+
+    document.getElementById("badge-result").classList.add("hidden");
+    document.getElementById("quiz-box").classList.remove("hidden");
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    const q = currentQuestions[currentQuestionIndex];
+    document.getElementById("question-text").innerText = `${currentQuestionIndex + 1}. ${q.question}`;
+    
+    // Update progress bar dynamically based on 3 questions
+    const progressPercent = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+    document.getElementById("quiz-progress").style.width = `${progressPercent}%`;
+
+    const optionsGrid = document.getElementById("options-grid");
+    optionsGrid.innerHTML = "";
+
+    q.options.forEach((optionText, idx) => {
+      const btn = document.createElement("button");
+      btn.className = "w-full text-left px-4 py-3 rounded-xl bg-black/40 hover:bg-[#FFD700]/20 border border-white/10 hover:border-[#FFD700] text-gray-200 text-sm font-medium transition-all duration-200 flex items-center justify-between group";
+      btn.innerHTML = `
+        <span>${optionText}</span>
+        <span class="w-5 h-5 rounded-full border border-gray-500 group-hover:border-[#FFD700] flex items-center justify-center text-xs">→</span>
+      `;
+      btn.onclick = () => selectAnswer(idx);
+      optionsGrid.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(selectedIndex) {
+    if (selectedIndex === currentQuestions[currentQuestionIndex].correct) {
+      score++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < currentQuestions.length) {
+      loadQuestion();
+    } else {
+      showBadgeResult();
+    }
+  }
+
+  function showBadgeResult() {
+    document.getElementById("quiz-box").classList.add("hidden");
+    const resultBox = document.getElementById("badge-result");
+    resultBox.classList.remove("hidden");
+
+    const badgeTitle = document.getElementById("badge-title");
+    const badgeSubtitle = document.getElementById("badge-subtitle");
+    const badgeScore = document.getElementById("badge-score");
+
+    badgeScore.innerText = `${score} / ${currentQuestions.length}`;
+
+    if (score === 3) {
+      badgeTitle.innerText = "👑 KING'S CERTIFIED BABARIAN";
+      badgeSubtitle.innerText = "Ultimate Master Fan!";
+    } else if (score === 2) {
+      badgeTitle.innerText = "🏏 PRO COVER-DRIVE FAN";
+      badgeSubtitle.innerText = "Great Knowledge!";
+    } else {
+      badgeTitle.innerText = "🟢 ROOKIE CRICKET FAN";
+      badgeSubtitle.innerText = "Keep Supporting Babar!";
+    }
+  }
+
+  function resetQuiz() {
+    startNewQuiz(); // Dubara click karne par naye random questions aayenge!
+  }
+
+  function shareBadge() {
+    alert("Take a screenshot of your badge & post it on your Instagram Story tagging @babarazam ! 🔥");
+  }
+
+  // Initial Load
+  document.addEventListener("DOMContentLoaded", () => {
+    startNewQuiz();
+  });
+
+
+ </script>
+</body>
+</html>
